@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Price Predictor</title>
+</head>
+<body>
+    <h1>Stock Price Predictor</h1>
+    <form method="POST">
+        <label>Enter a stock value:</label>
+        <input type="text" name="stock_input" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+
+    {% if prediction is not none %}
+        <h2>Prediction for {{ input_value }}: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
